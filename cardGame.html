@@ -1,0 +1,44 @@
+<script>
+    //old maid card game variance in Javascript. Comments for learning.
+    var cards = new Array("ace","king","queen","jack",10,9,8,7,6,5,4,3,2);
+    var hand = [];
+     
+    function dealHand(numberOfCards){
+        if(numberOfCards > 0){
+            var random = Math.floor(Math.random()*cards.length);
+                   
+                    // this will add a card to the hand array
+                    hand.push(cards[random]);
+                    console.log("Your card is " + hand.slice(hand.length-1));
+
+                    // this will remove card selected from cards array
+                    cards.splice(random,1);
+                    // removes from numberOfCards
+                    numberOfCards--;
+                    // this is a recursive function call
+                    return dealHand(numberOfCards);
+            }      
+            return;
+    }
+     
+    function oldMaid(num, match){
+        if (num===0) {
+            return console.log("You have no matching pair for the " + match + " , " + "Old Maid!");
+        }
+            if(num > 0){
+                if(hand[num]==match){
+                  return console.log("Phew! You have a matching pair for the ", hand[num] + "!");
+                 }
+                // removes from num
+            num--;
+                // recursive function call... don't forget to remember to use both arguments
+                return oldMaid(num, match);
+            }
+    }
+     
+    // Call dealHand and oldMaid
+    dealHand(5);
+    oldMaid(5, "queen");
+    console.log("\n");
+
+</script>
