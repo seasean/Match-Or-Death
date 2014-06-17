@@ -1,5 +1,5 @@
 <script>
-    //old maid card game variance in Javascript. Comments for learning.
+    //old maid matching card game variance in Javascript. 
     var cards = new Array("ace","king","queen","jack",10,9,8,7,6,5,4,3,2);
     var hand = [];
      
@@ -21,9 +21,9 @@
             return;
     }
      
-    function oldMaid(num, match){
+    function isThereAMatch(num, match){
         if (num===0) {
-            return console.log("You have no matching pair for the " + match + " , " + "Old Maid!");
+            return console.log("You have no matching pair for the " + match + " , " + "Death Is Imminent!");
         }
             if(num > 0){
                 if(hand[num]==match){
@@ -31,14 +31,14 @@
                  }
                 // removes from num
             num--;
-                // recursive function call... don't forget to remember to use both arguments
-                return oldMaid(num, match);
+                // recursive function call... don't forget to remember to use both arguments!
+                return isThereAMatch(num, match);
             }
     }
      
-    // Call dealHand and oldMaid
+    // Call dealHand and isThereAMatch
     dealHand(5);
-    oldMaid(5, "queen");
+    isThereAMatch(5, "king");
     console.log("\n");
 
 </script>
