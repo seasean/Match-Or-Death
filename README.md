@@ -1,5 +1,5 @@
-old-maid
+Match-Or-Death
 ========
 
-Javascript card game 'Old Maid'.
-Coding practice modeling a card game, plays in the console. 
+Javascript card game "Match Or Death" based on concepts from the game Old Maid.
+Plays in the console. 
